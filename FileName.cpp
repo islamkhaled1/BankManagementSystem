@@ -133,9 +133,19 @@ stUser ConvertUserLinetoRecord(string Line, string Seperator = "#//#")
 
     vUserData = SplitString(Line, Seperator);
 
+    if (vUserData.size() < 3)
+        return User;
+
     User.UserName = vUserData[0];
     User.Password = vUserData[1];
-    User.Permissions = stoi(vUserData[2]);
+    try
+    {
+        User.Permissions = stoi(vUserData[2]);
+    }
+    catch (...)
+    {
+        User.Permissions = 0;
+    }
 
     return User;
 
@@ -149,11 +159,21 @@ sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
 
     vClientData = SplitString(Line, Seperator);
 
+    if (vClientData.size() < 5)
+        return Client;
+
     Client.AccountNumber = vClientData[0];
     Client.PinCode = vClientData[1];
     Client.Name = vClientData[2];
     Client.Phone = vClientData[3];
-    Client.AccountBalance = stod(vClientData[4]);
+    try
+    {
+        Client.AccountBalance = stod(vClientData[4]);
+    }
+    catch (...)
+    {
+        Client.AccountBalance = 0;
+    }
 
 
     return Client;
@@ -167,9 +187,19 @@ stUser ConvertUserLinetoRecord2(string Line, string Seperator = "#//#")
 
     vUserData = SplitString(Line, Seperator);
 
+    if (vUserData.size() < 3)
+        return User;
+
     User.UserName = vUserData[0];
     User.Password = vUserData[1];
-    User.Permissions = stoi(vUserData[2]);
+    try
+    {
+        User.Permissions = stoi(vUserData[2]);
+    }
+    catch (...)
+    {
+        User.Permissions = 0;
+    }
 
     return User;
 
@@ -220,7 +250,12 @@ bool ClientExistsByAccountNumber(string AccountNumber, string FileName)
         while (getline(MyFile, Line))
         {
 
+            if (Line.empty())
+                continue;
+
             Client = ConvertLinetoRecord(Line);
+            if (Client.AccountNumber.empty())
+                continue;
             if (Client.AccountNumber == AccountNumber)
             {
                 MyFile.close();
@@ -256,7 +291,12 @@ bool UserExistsByUsername(string Username, string FileName)
         while (getline(MyFile, Line))
         {
 
+            if (Line.empty())
+                continue;
+
             User = ConvertUserLinetoRecord(Line);
+            if (User.UserName.empty())
+                continue;
             if (User.UserName == Username)
             {
                 MyFile.close();
@@ -418,7 +458,13 @@ vector <stUser> LoadUsersDataFromFile(string FileName)
         while (getline(MyFile, Line))
         {
 
+            if (Line.empty())
+                continue;
+
             User = ConvertUserLinetoRecord(Line);
+
+            if (User.UserName.empty())
+                continue;
 
             vUsers.push_back(User);
         }
@@ -448,7 +494,13 @@ vector <sClient> LoadCleintsDataFromFile(string FileName)
         while (getline(MyFile, Line))
         {
 
+            if (Line.empty())
+                continue;
+
             Client = ConvertLinetoRecord(Line);
+
+            if (Client.AccountNumber.empty())
+                continue;
 
             vClients.push_back(Client);
         }
