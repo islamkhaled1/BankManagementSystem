@@ -87,33 +87,32 @@ Example: `A101#//#1234#//#John Doe#//#0123456789#//#5000.00`
 
 ## 📸 Screenshots
 
-### Main Menu
-```
-===========================================
-		Main Menue Screen
-===========================================
-	[1] Show Client List.
-	[2] Add New Client.
-	[3] Delete Client.
-	[4] Update Client Info.
-	[5] Find Client.
-	[6] Transactions.
-	[7] Manage Users.
-	[8] Logout.
-===========================================
-```
+### Transaction Menu
+![Transaction Menu](images/Transaction%20Menu.png)
 
-### Transactions Menu
-```
-===========================================
-		Transactions Menue Screen
-===========================================
-	[1] Deposit.
-	[2] Withdraw.
-	[3] Total Balances.
-	[4] Main Menue.
-===========================================
-```
+### Deposit
+![Deposit](images/Deposit.png)
+
+### Total Balance
+![Total Balance](images/Total%20Balance.png)
+
+### Manage Users Menu
+![Manage Users Menu](images/Manage%20Users%20Menu.png)
+
+### Users List
+![Users List](images/Users%20List.png)
+
+### Add New User
+![Add New User](images/Add%20New%20User.png)
+
+### Add New Client
+![Add New Client](images/Add%20New%20Client.png)
+
+### Find Client
+![Find Client](images/Find%20Client.png)
+
+### Update Client
+![Update Client](images/Update%20Client.png)
 
 ## 🔧 How to Use
 
