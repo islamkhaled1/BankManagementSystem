@@ -169,7 +169,7 @@ When creating a new user, you can grant specific permissions:
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@YourUsername](https://github.com/islamkhaled1)
+- GitHub: [@islamkhaled1](https://github.com/islamkhaled1)
 
 ## 📄 License
 
