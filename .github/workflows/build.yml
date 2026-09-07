@@ -15,6 +15,9 @@ jobs:
     
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
+
+    - name: Setup MSVC Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1
       
     - name: Build
       run: |
